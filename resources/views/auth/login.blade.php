@@ -33,7 +33,7 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page" style="background-image: url({{asset('public/background.jpeg')}});"">
+<body class="hold-transition login-page img-responsive" style="background: url({{asset('public/background.jpeg')}}) no-repeat center fixed; background-size:cover;">
 <div class="login-box">
     <div class="login-logo">
         <img src="{{asset('public/logo_z.png')}}" class="img-fluid" height="50px">
