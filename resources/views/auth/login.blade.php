@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>InfyOm Laravel Generator</title>
+    <title>Zuhal Distributor</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
+    <link rel="icon" href="{{ URL::asset('public/favicon.ico') }}" type="image/x-icon"/>
+   <!--  <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/css/app.css')  }}"> -->
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -32,10 +33,12 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page img-responsive" style="background: url({{asset('public/background.jpeg')}}) no-repeat center fixed; background-size:cover;">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
+        <img src="{{asset('public/logo_z.png')}}" class="img-fluid" height="50px">
+        <br>
+        <a href="{{ url('/home') }}"><b style="color:beige;" >Zuhal Distributor Enterprise</b></a>
     </div>
 
     <!-- /.login-logo -->
