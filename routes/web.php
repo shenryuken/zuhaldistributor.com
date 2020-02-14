@@ -34,3 +34,14 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
+
+Route::resource('users', 'UserController')->middleware('auth');
+
+
+Route::resource('transactions', 'TransactionController');
+
+Route::resource('wallets', 'WalletController');
+
+Route::resource('transfers', 'TransferController');
+
+Route::resource('products', 'ProductController');
