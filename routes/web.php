@@ -45,3 +45,7 @@ Route::resource('wallets', 'WalletController');
 Route::resource('transfers', 'TransferController');
 
 Route::resource('products', 'ProductController');
+
+Route::resource('profiles', 'ProfileController');
+
+Route::resource('purchases', 'PurchaseController');

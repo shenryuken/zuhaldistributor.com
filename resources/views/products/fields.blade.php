@@ -7,7 +7,7 @@
 <!-- Pic Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('pic', 'Pic:') !!}
-    {!! Form::text('pic', null, ['class' => 'form-control']) !!}
+    {!! Form::file('pic', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Desc Field -->

@@ -18,3 +18,11 @@
     <a href="{{ route('products.index') }}"><i class="fa fa-edit"></i><span>Products</span></a>
 </li>
 
+<li class="{{ Request::is('profiles*') ? 'active' : '' }}">
+    <a href="{{ route('profiles.index') }}"><i class="fa fa-edit"></i><span>Profiles</span></a>
+</li>
+
+<li class="{{ Request::is('purchases*') ? 'active' : '' }}">
+    <a href="{{ route('purchases.index') }}"><i class="fa fa-edit"></i><span>Purchases</span></a>
+</li>
+
