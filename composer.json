@@ -21,7 +21,6 @@
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.0",
         "livewire/livewire": "^0.7.4",
-        "neonexxa/billplz-wrapper": "^2.0",
         "yajra/laravel-datatables": "^1.5",
         "yajra/laravel-datatables-oracle": "^9.8"
     },

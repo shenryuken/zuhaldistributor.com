@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\PurchaseDataTable;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Requests\CreatePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
 use App\Repositories\PurchaseRepository;
@@ -11,8 +12,8 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 
-use Neonexxa\BillplzWrapperV3\BillplzBill;
 use App\Product;
+use App\Purchase;
 use Auth;
 
 class PurchaseController extends AppBaseController
@@ -53,40 +54,17 @@ class PurchaseController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreatePurchaseRequest $request)
+    public function store(Request $request)
     {
-        // $input = $request->all();
+        $input = $request->all();
 
-        // $purchase = $this->purchaseRepository->create($input);
+        $purchase = $this->purchaseRepository->create($input);
 
-        // Flash::success('Purchase saved successfully.');
+        Flash::success('Purchase saved successfully.');
 
-        // return redirect(route('purchases.index'));
+        return redirect(route('purchases.index'));
 
-        //
-        $params = $request->all();
-        $product = Product::find($params['product']);
-
-        // from the guide
-        $res0 = new BillplzBill;
-        $res0->collection_id = $product->payment_link; 
-        $res0->description = "New BIll"; 
-        $res0->email = Auth::user()->email; 
-        $res0->name = Auth::user()->name; 
-        $res0->amount = $product->price*100; 
-        $res0->callback_url = "http://localhost/zuhaldistributor.com"; 
-        // and other optional params
-        $res0 = $res0->create_bill();
-        list($rhead ,$rbody, $rurl) = explode("\n\r\n", $res0);
-        $bplz_result = json_decode($rurl);
-
-        // Store the bill into our purchases
-        $purchase = new Purchase;
-        $purchase->user_id = Auth::user()->id;
-        $purchase->product_id = $product->id;
-        $purchase->bill_id = $bplz_result->id;
-        $purchase->save();
-        return redirect($bplz_result->url);
+        
     }
 
     /**

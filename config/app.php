@@ -167,7 +167,6 @@ return [
          */
         \InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class, 
         \InfyOm\RoutesExplorer\RoutesExplorerServiceProvider::class,
-        Neonexxa\BillplzWrapperV3\BillplzServiceProvider::class,
         /*
          * Application Service Providers...
          */
